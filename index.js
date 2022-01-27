@@ -29,6 +29,7 @@ function closeTaskBtn() {
   document.querySelector(".add").style.cursor = "pointer";
 }
 function addListBtn() {
+  document.querySelector("#wel").style.display = "none";
   if (document.querySelector("#newlist").value == "") {
     alert("Please enter a name");
     return;
@@ -73,6 +74,10 @@ function removeCard(a) {
     if (dataarr[i].id == a.parentNode.parentNode.id) {
       dataarr.splice(i, 1);
     }
+  }
+  if (dataarr.length == 0) {
+    // console.log("inside");
+    document.querySelector("#wel").style.display = "inline-block";
   }
   console.log(dataarr);
 }
