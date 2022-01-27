@@ -7,7 +7,7 @@ var iid;
 function addList() {
   newList.style.display = "inline-block";
   homeUi.style.filter = "blur(8px)";
-  //   newList.style.transitionDuration = "1s";
+  newList.style.transitionDuration = "1s";
   newList.style.transform = "translateY(-50px)";
   document.querySelector(".add").style.cursor = "default";
 }
@@ -110,7 +110,11 @@ function addTaskBtn() {
   console.log(dataarr);
 }
 function markdone(a) {
-  //   console.log(a.parentNode);
+  console.log(a.parentNode.id);
+  document.getElementById(a.parentNode.id).style.textDecoration =
+    "line-through";
+  document.getElementById(a.parentNode.id).children[0].style.display = "none";
+  document.getElementById(a.parentNode.id).style.color = "red";
   a.parentNode.style.textDecoration = "line-through";
   a.parentNode.children[0].style.display = "none";
   a.parentNode.style.color = "red";
@@ -119,29 +123,12 @@ function uitrip(a) {
   console.log(a.parentNode.children[2].innerHTML);
   uiTrip.style.display = "inline-block";
   homeUi.style.display = "none";
-  const titleTrip = document.querySelector(".title-trip");
+  //   const titleTrip = document.querySelector(".title-trip");
   const trip = document.querySelector(".container-card-trip");
-  let tasktrip = document.createElement("div");
-  tasktrip.innerHTML = `<span
-          class="title-trip title-trip-space"
-          style="text-decoration-thickness: 2px"
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-        >&nbsp;${a.innerText}
-        <span
-          class="title-trip title-trip-space"
-          style="text-decoration-thickness: 2px"
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-        >`;
-  titleTrip.innerHTML = `<span
-          class="title-trip title-trip-space"
-          style="text-decoration-thickness: 2px"
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-        >&nbsp;${a.innerText}
-        <span
-          class="title-trip title-trip-space"
-          style="text-decoration-thickness: 2px"
-          >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span
-        >`;
+  document.querySelector(
+    "#kkk"
+  ).innerHTML = `&nbsp;${a.parentNode.children[0].innerText}`;
+
   trip.innerHTML = a.parentNode.children[2].innerHTML;
 }
 function mainUi() {
