@@ -121,30 +121,24 @@ function markdone(a) {
   a.parentNode.style.color = "red";
 }
 function uitrip(a) {
-  tid = a;
-  console.log(a.parentNode.children[2].innerHTML);
-  uiTrip.style.display = "inline-block";
-  homeUi.style.display = "none";
-  const trip = document.querySelector(".item-container-trip");
-  document.querySelector(
-    "#kkk"
-  ).innerHTML = `&nbsp;${a.parentNode.children[0].innerText}`;
-
-  trip.innerHTML = a.parentNode.children[2].innerHTML;
+  console.log(a.parentNode.id);
+  document.querySelector(".trip-name").innerText = a.innerText;
+  document.querySelector(".left-title").style.display = "none";
+  document.querySelector(".trip-head").style.display = "initial";
+  document
+    .querySelectorAll(".cards")
+    .forEach((a) => (a.style.display = "none"));
+  document.getElementById(a.parentNode.id).style.display = "initial";
+  document.getElementById(a.parentNode.id).style.position = "absolute";
+  document.getElementById(a.parentNode.id).style.left = "450px";
 }
 function mainUi() {
-  uiTrip.style.display = "none";
-  homeUi.style.display = "inline-block";
-}
-function removeCardTrip() {
-  tid.parentNode.remove();
-  for (let i = 0; i < dataarr.length; i++) {
-    if (dataarr[i].id == tid.parentNode.id) {
-      dataarr.splice(i, 1);
-    }
-  }
-  if (dataarr.length == 0) {
-    document.querySelector("#wel").style.display = "inline-block";
-  }
-  mainUi();
+  document.querySelector(".left-title").style.display = "initial";
+  document.querySelector(".trip-head").style.display = "none";
+  document
+    .querySelectorAll(".cards")
+    .forEach((a) => (a.style.display = "initial"));
+  document
+    .querySelectorAll(".cards")
+    .forEach((a) => (a.style.position = "static"));
 }

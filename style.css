@@ -19,6 +19,13 @@ body {
   width: 1000px;
   margin-bottom: 60px;
 }
+.trip-head {
+  display: none;
+  /* border: 1px solid black; */
+  width: 600px;
+  height: 100px;
+  float: left;
+}
 .title {
   display: inline-block;
 }
@@ -270,8 +277,17 @@ body {
 }
 .back {
   /* border: 1px solid black; */
-  display: inline-block;
+  display: block;
+  float: left;
+  position: relative;
+  top: 15px;
   /* margin-left: %; */
+}
+.trip-name {
+  float: right;
+  font-size: 35px;
+  position: relative;
+  top: 27px;
 }
 .back-logo-circle {
   border-radius: 50%;
@@ -331,6 +347,7 @@ body {
   box-shadow: 10px 10px 10px #d6d0d0;
   justify-content: center;
 }
+
 .card-trip {
   display: inline-block;
   padding-left: 100px;
