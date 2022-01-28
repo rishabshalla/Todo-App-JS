@@ -4,6 +4,7 @@ const homeUi = document.querySelector(".home-ui");
 const uiTrip = document.querySelector(".ui-trip");
 var dataarr = [];
 var iid;
+var tid;
 function addList() {
   newList.style.display = "inline-block";
   homeUi.style.filter = "blur(8px)";
@@ -16,7 +17,6 @@ function addTask(a) {
   homeUi.style.filter = "blur(8px)";
   document.querySelector(".add").style.cursor = "default";
   iid = a.parentNode.parentNode;
-  //   console.log(iid);
 }
 function closeListBtn() {
   newList.style.display = "none";
@@ -76,7 +76,6 @@ function removeCard(a) {
     }
   }
   if (dataarr.length == 0) {
-    // console.log("inside");
     document.querySelector("#wel").style.display = "inline-block";
   }
   console.log(dataarr);
@@ -88,9 +87,7 @@ function addTaskBtn() {
     return;
   }
   let id = Date.now();
-  //   console.log(document.getElementById(iid["id"]).children[2]);
   const itemCont = document.getElementById(iid["id"]).children[2];
-  //   console.log(itemCont);
   let task = document.createElement("div");
   task.setAttribute("class", "item");
   task.setAttribute("id", id);
@@ -104,7 +101,6 @@ function addTaskBtn() {
         id: id,
         task: document.querySelector("#newtask").value,
       });
-      //   console.log(dataarr);
     }
   }
   itemCont.append(task);
@@ -125,11 +121,11 @@ function markdone(a) {
   a.parentNode.style.color = "red";
 }
 function uitrip(a) {
+  tid = a;
   console.log(a.parentNode.children[2].innerHTML);
   uiTrip.style.display = "inline-block";
   homeUi.style.display = "none";
-  //   const titleTrip = document.querySelector(".title-trip");
-  const trip = document.querySelector(".container-card-trip");
+  const trip = document.querySelector(".item-container-trip");
   document.querySelector(
     "#kkk"
   ).innerHTML = `&nbsp;${a.parentNode.children[0].innerText}`;
@@ -139,5 +135,16 @@ function uitrip(a) {
 function mainUi() {
   uiTrip.style.display = "none";
   homeUi.style.display = "inline-block";
-  //   homeUi.style.margin = "5% 12.5%";
+}
+function removeCardTrip() {
+  tid.parentNode.remove();
+  for (let i = 0; i < dataarr.length; i++) {
+    if (dataarr[i].id == tid.parentNode.id) {
+      dataarr.splice(i, 1);
+    }
+  }
+  if (dataarr.length == 0) {
+    document.querySelector("#wel").style.display = "inline-block";
+  }
+  mainUi();
 }

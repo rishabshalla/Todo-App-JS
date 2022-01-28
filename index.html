@@ -62,7 +62,23 @@
         <div class="back-text">Back</div>
       </div>
       <br /><br />
-      <div class="container-card-trip"></div>
+      <div class="container-card-trip">
+        <div class="item-container-trip"></div>
+        <div id="item-controls">
+          <i
+            class="fa fa-trash-o"
+            style="font-size: 30px"
+            onclick="removeCardTrip()"
+          ></i>
+          <div class="add-new-item" onclick="addTask(this)">
+            <div class="circle"></div>
+            <div class="plus">
+              <div class="ver"></div>
+              <div class="hor"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="new-list">
       <form action="">

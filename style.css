@@ -126,6 +126,9 @@ body {
 .item-container {
   min-height: 200px;
 }
+.item-container-trip {
+  min-height: 200px;
+}
 .item {
   display: flex;
   justify-content: center;
@@ -140,6 +143,14 @@ body {
   color: white;
 }
 #item-controls {
+  /* border: 1px solid #000; */
+  height: 50px;
+  width: 75px;
+  position: relative;
+  bottom: 0px;
+  left: 140px;
+}
+#item-controls-trip {
   /* border: 1px solid #000; */
   height: 50px;
   width: 75px;
@@ -314,7 +325,7 @@ body {
   margin-left: 30%;
   padding-top: 30px;
   border: 1px solid #f52e27;
-  min-height: 330px;
+  min-height: 250px;
   width: 220px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px #d6d0d0;
