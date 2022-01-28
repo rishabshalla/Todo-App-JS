@@ -100,7 +100,7 @@ body {
 .cards {
   margin-top: 30px;
   border: 1px solid #f52e27;
-  min-height: 330px;
+  min-height: 250px;
   width: 220px;
   border-radius: 10px;
   box-shadow: 10px 10px 10px #d6d0d0;
@@ -132,6 +132,7 @@ body {
 }
 .item-container {
   min-height: 200px;
+  padding-top: 30px;
 }
 .item-container-trip {
   min-height: 200px;

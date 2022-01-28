@@ -65,6 +65,7 @@ function addListBtn() {
   newList.style.display = "none";
   homeUi.style.filter = "initial";
   document.querySelector(".add").style.cursor = "pointer";
+  mainUi();
   console.log(dataarr);
 }
 function removeCard(a) {
@@ -78,6 +79,7 @@ function removeCard(a) {
   if (dataarr.length == 0) {
     document.querySelector("#wel").style.display = "inline-block";
   }
+  mainUi();
   console.log(dataarr);
 }
 
@@ -121,16 +123,19 @@ function markdone(a) {
   a.parentNode.style.color = "red";
 }
 function uitrip(a) {
-  console.log(a.parentNode.id);
+  tid = a;
+  console.log(a.parentNode);
   document.querySelector(".trip-name").innerText = a.innerText;
   document.querySelector(".left-title").style.display = "none";
   document.querySelector(".trip-head").style.display = "initial";
   document
     .querySelectorAll(".cards")
     .forEach((a) => (a.style.display = "none"));
+  a.parentNode.children[0].style.display = "none";
+  a.parentNode.children[1].style.display = "none";
   document.getElementById(a.parentNode.id).style.display = "initial";
   document.getElementById(a.parentNode.id).style.position = "absolute";
-  document.getElementById(a.parentNode.id).style.left = "450px";
+  document.getElementById(a.parentNode.id).style.left = "420px";
 }
 function mainUi() {
   document.querySelector(".left-title").style.display = "initial";
@@ -141,4 +146,6 @@ function mainUi() {
   document
     .querySelectorAll(".cards")
     .forEach((a) => (a.style.position = "static"));
+  tid.parentNode.children[0].style.display = "flex";
+  tid.parentNode.children[1].style.display = "block";
 }
